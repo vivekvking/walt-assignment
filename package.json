@@ -1,0 +1,20 @@
+{
+  "name": "walt-query-compiler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A deterministic semantic-contract to SQL compiler",
+  "exports": "./compile.js",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "demo": "node demo.js",
+    "test": "node --test",
+    "bench": "node benchmark.js"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "1.5.5-r.4"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8"
+  }
+}

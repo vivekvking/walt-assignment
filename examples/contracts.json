@@ -1,0 +1,21 @@
+{
+  "A": {
+    "metrics": [
+      { "name": "total_revenue", "as": "online_rev", "filters": [{ "field": "channel", "op": "=", "value": "Online", "model": "fact_sales" }] },
+      { "name": "total_revenue" }
+    ],
+    "group_by": [],
+    "filters": [{ "field": "fiscal_year", "op": "=", "value": 2026, "model": "dim_calendar" }]
+  },
+  "B": {
+    "metrics": [{ "name": "total_revenue" }],
+    "group_by": ["region"],
+    "compare": { "dimension": "fiscal_year", "periods": ["2025", "2026"], "primary": "2026", "outputs": ["values", "delta", "pct_change"] },
+    "totals": "grand"
+  },
+  "C": {
+    "metrics": [{ "name": "order_count" }],
+    "group_by": ["region"],
+    "totals": "grand"
+  }
+}
